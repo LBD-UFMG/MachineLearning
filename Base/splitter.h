@@ -11,7 +11,7 @@ struct SplitterRecord
 
 class SplitterInterface{
   public:
-    virtual ~Splitter() { }
+    virtual ~SplitterInterface() { }
 
     /**
      * Initialize the splitter (Used by Tree)
