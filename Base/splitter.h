@@ -9,7 +9,7 @@ struct SplitterRecord
   double impurity_right;  // Impurity of the right split.
 };
 
-class Splitter{
+class SplitterInterface{
   public:
     virtual ~Splitter() { }
 
