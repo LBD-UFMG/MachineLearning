@@ -27,3 +27,10 @@
 *.exe
 *.out
 *.app
+
+# Generated documentation
+doc/html
+doc/latex
+
+# Bazel directories
+bazel-*
