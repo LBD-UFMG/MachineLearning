@@ -1,5 +1,7 @@
 #ifndef _BASE_POINT_H_
 #define _BASE_POINT_H_
+#include <string>
+
 /**
  * \file point.h
  * \brief Header defining the multi-dimensional point interface.
