@@ -19,21 +19,8 @@ struct SplitterRecord
  */
 class Splitter{
   public:
-    virtual ~Splitter() { }
-
     /**
-     * Initialize the splitter (Used by Tree).
-     * \param  col             An object of Collection.
-     * \param  max_features    Number of features to be sampled without
-     *                          replacement and considered at split time. 
-     * \param  min_sample_leaf Minimum number of samples to perform the split.
-     * \param  sample_weight   Weight of each sample in collection.
-     * \param  feature_weight  Weight of each feature.
-     */
-    virtual void Init(/*Collection col,*/ int max_features, int min_sample_leaf
-                    , double* sample_weight, double* feature_weight) = 0;
-    /**
-     * Returns the split of the given node.
+     * Returns the split of a given node.
      * \param t   Node.
      * \return SplitterRecord.
      */
