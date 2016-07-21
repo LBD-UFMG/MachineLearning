@@ -21,10 +21,10 @@ namespace base {
  */
 class Point {
  public:
-   /**
-    * \brief Standard destructor.
-    */
-   virtual ~Point();
+  /**
+   * \brief Standard destructor.
+   */
+  virtual ~Point();
   /** General accessor method for the underlying data.
    * \param feature_id The coordinate of interest. Indexing is implementation
    * specific.
@@ -34,9 +34,7 @@ class Point {
 
   /**
    * \brief Builds a `std::string` representation of the object.
-   *
-   * \return A `std::string` object usable by
-   * \link Point::Point(const std::string& point_string) \endlink.
+   * \return A `std::string` representation of the object.
    */
   virtual std::string ToString() = 0 const;
 };
