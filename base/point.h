@@ -21,15 +21,6 @@ namespace base {
  */
 class Point {
  public:
-  /**
-   * Default constructor.
-   */
-  virtual Point() = 0;
-  /** String parsing constructor.
-   *
-   * \param point_string should be equal to the return value of ToString().
-   */
-  virtual Point(const std::string& point_string) = 0;
   /** General accessor method for the underlying data.
    * \param feature_id The coordinate of interest. Indexing is implementation
    * specific.
@@ -38,7 +29,7 @@ class Point {
   virtual double GetFeatureValue(unsigned feature_id) = 0 const;
 
   /**
-   * Builds a `std::string` representation of the object.
+   * \brief Builds a `std::string` representation of the object.
    *
    * \return A `std::string` object usable by
    * \link Point::Point(const std::string& point_string) \endlink.
