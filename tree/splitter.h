@@ -1,5 +1,5 @@
-#ifndef SPLITTER_H__
-#define SPLITTER_H__
+#ifndef _TREE_SPLITTER_H__
+#define _TREE_SPLITTER_H__
 
 /**
  * Information regarding the split of a given node.
@@ -19,6 +19,12 @@ struct SplitterRecord
  */
 class Splitter{
   public:
+
+    /**
+     * \brief Standard destructor.
+     */
+    virtual ~Splitter();
+
     /**
      * Returns the split of a given node.
      * \param t   Node.
