@@ -21,6 +21,10 @@ namespace base {
  */
 class Point {
  public:
+   /**
+    * \brief Standard destructor.
+    */
+   virtual ~Point();
   /** General accessor method for the underlying data.
    * \param feature_id The coordinate of interest. Indexing is implementation
    * specific.
