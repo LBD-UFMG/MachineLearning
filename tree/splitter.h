@@ -1,17 +1,9 @@
 #ifndef _TREE_SPLITTER_H__
 #define _TREE_SPLITTER_H__
 
-/**
- * Information regarding the split of a given node.
- * This will be used by the tree during its construction.
- */
-struct SplitterRecord
-{
-  double threshold;       /**<  Threshold to split at. */
-  double improvement;     /**<  Impurity improvement given parent node. */ 
-  double impurity_left;   /**<  Impurity of the left split. */
-  double impurity_right;  /**<  Impurity of the right split. */
-};
+#include "splitter_record.h"
+
+namespace tree{
 
 /**
  * Base class for all Splitters. The Splitter will be used by the tree to find
@@ -30,14 +22,16 @@ class Splitter{
      * \param t   Node.
      * \return SplitterRecord.
      */
-    virtual SplitterRecord NodeSplit(/* Node t */) = 0;
+    virtual SplitterRecord Split(/* Node t */) = 0;
     
     /**
      * Impurity of a node.
      * \param t  Node.
      * \return Imputity measurement.
      */
-    virtual double NodeImpurity(/* Node t */) = 0;
+    virtual double Impurity(/* Node t */) = 0;
 };
+
+}
 
 #endif
