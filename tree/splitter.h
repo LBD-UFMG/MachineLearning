@@ -32,6 +32,6 @@ class Splitter{
     virtual double Impurity(/* Node t */) = 0;
 };
 
-}
+} // namespace tree
 
 #endif

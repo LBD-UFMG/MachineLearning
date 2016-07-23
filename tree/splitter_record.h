@@ -16,6 +16,6 @@ class SplitterRecord{
     virtual ~SplitterRecord();
 };
 
-}
+} // namespace tree
 
 #endif
