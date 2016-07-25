@@ -27,7 +27,7 @@ class Splitter{
     /**
      * Impurity of a node.
      * \param t  Node.
-     * \return Imputity measurement.
+     * \return Impurity measurement.
      */
     virtual double Impurity(/* Node t */) = 0;
 };
