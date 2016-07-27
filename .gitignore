@@ -34,3 +34,7 @@ doc/latex
 
 # Bazel directories
 bazel-*
+
+# Idea Clion and CMakeLists.txt directories
+.idea/*
+CMakeLists.txt
