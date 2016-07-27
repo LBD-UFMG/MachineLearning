@@ -30,13 +30,13 @@ class Point {
    * specific.
    * \return The value of the coordinate specified in the input.
    */
-  virtual double GetFeatureValue(unsigned feature_id) = 0 const;
+  virtual double GetFeatureValue(unsigned feature_id) const = 0;
 
   /**
    * \brief Builds a `std::string` representation of the object.
    * \return A `std::string` representation of the object.
    */
-  virtual std::string ToString() = 0 const;
+  virtual std::string ToString() const = 0;
 };
 
 }  // namespace base
