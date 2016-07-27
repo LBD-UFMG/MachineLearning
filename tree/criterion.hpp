@@ -27,4 +27,4 @@ protected:
 
 } // namespace tree
 
-#endif // MACHINELEARNING_TREE_CRITERION_HPP
+#endif
