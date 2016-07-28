@@ -1,5 +1,5 @@
-#ifndef _TREE_H__ 
-#define _TREE_H__
+#ifndef  _MACHINELEARNING_TREE_TREE_H__ 
+#define  _MACHINELEARNING_TREE_TREE_H__
 
 #include "splitter.h"
 
@@ -17,7 +17,7 @@ class Tree{
     /**
      * \brief Standard destructor.
      */
-    virtual ~Tree() { }
+    virtual ~Tree();
 
     /**
      * Builds the Decision Tree
@@ -39,7 +39,7 @@ class Tree{
      *  over all possible classes.
      *  \return Instace probability distribution
      */
-    virtual std::vector<std::vector<double> > &PredictProba(/*Collection X*/) = 0;
+    virtual std::vector<std::vector<double> > &PredictProbability(/*Collection X*/) = 0;
 };
 
 } // namespace tree
