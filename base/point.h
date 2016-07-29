@@ -1,5 +1,5 @@
-#ifndef _BASE_POINT_H_
-#define _BASE_POINT_H_
+#ifndef MACHINELEARNING_BASE_POINT_H_
+#define MACHINELEARNING_BASE_POINT_H_
 #include <string>
 
 /**
