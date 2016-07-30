@@ -2,6 +2,7 @@
 #define  _MACHINELEARNING_TREE_TREE_H__
 
 #include "splitter.h"
+//#include "criterion.h"
 
 #include <vector>
 
@@ -15,31 +16,53 @@ class Tree{
   public:
 
     /**
+     * Tree class constructor
+     * \param splitter      Splitter object
+     * \param criterion     Criterion object
+     * \param sampler       Sampler object
+     * \param max_features    The maximum number of features used to create the tree.
+     * \param max_depth     The maximum depth of the tree.
+     * \param max_leaf_nodes  The maximum number of leaf nodes of the tree.
+     * \param min_samples_leaf  The minimum number of samples per leaf.
+     * \param min_samples_split The minimum number of samples per node in order to be splitted in two.
+     */
+    Tree(Splitter *splitter, /*Criterion *criterion, Sampler *sampler,*/ float max_features,
+       int max_depth, int max_leaf_nodes, int min_samples_leaf, int min_samples_split);
+
+    /**
      * \brief Standard destructor.
      */
-    virtual ~Tree();
+    ~Tree();
 
     /**
-     * Builds the Decision Tree
-     * \param X              An object of Collection
-     * \param sample_weight  Weight of each sample in collection
-     * \param feature_weight Weight of each feature 
+     * Builds the Decision Tree.
+     * \param X        An object of Collection.
+     * \param sample_weight  Weight of each sample in collection.
+     * \param feature_weight Weight of each feature .
      */
-    virtual void Build(/*Collection X,*/
-                        std::vector<double> &sample_weight, std::vector<double> &feature_weight) = 0;
+    void Build(/*const Collection *X,*/
+          const std::vector<double> *sample_weight, const std::vector<double> *feature_weight);
 
+    
     /**
-     * Predicts the labels of the instances of X based on the fitted model
-     * \return Instance labels
+     * Returns the leafs which each instance belongs to.
+     * \param X     An object of Collection.
+     * \param leafs Vector of leafs where the instances laid down.
      */
-    virtual std::vector<int> &Predict(/*Collectiin X*/) = 0;
+    void Traverse(/*const Collection *X, std::vector<Node*> &leafs*/);
 
-    /**
-     *  Returns the predicted probability distribution of each instance in X
-     *  over all possible classes.
-     *  \return Instace probability distribution
-     */
-    virtual std::vector<std::vector<double> > &PredictProbability(/*Collection X*/) = 0;
+  protected:
+
+    Splitter *splitter; 
+    /*Criterion *criterion;*/
+    /*Sampler *sampler;*/ 
+    float max_features;
+    int max_depth;
+    int max_leaf_nodes;
+    int min_samples_leaf;
+    int min_samples_split;
+    /*Node* root;*/
+
 };
 
 } // namespace tree
