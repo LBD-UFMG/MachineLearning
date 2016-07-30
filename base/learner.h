@@ -18,22 +18,23 @@ class Learner{
     virtual ~Learner();
 
     /**
-     * Train the learner with a given dataset
-     * \param X A pointer object of Collection
+     * Train the learner with a given dataset.
+     * \param X A pointer object of Collection.
      */
     virtual void Train(/*const Collection *X*/);
 
     /**
-     * Predicts the labels of the instances of X based on the fitted model
-     * \return Instance labels
+     * Predicts the labels of the instances of X based on the fitted model.
+     * \param X           A pointer object of Collection.
+     * \param prediction  Instances prediction.
      */
     virtual void Predict(/*const Collection *X,*/ std::vector<double> &prediction) = 0;
 
     /**
      *  Returns the predicted probability distribution of each instance in X
      *  over all possible classes.
-     *  \param X
-     *  \param distribution
+     *  \param X            A pointer object of Collection.
+     *  \param distribution Instances probability distribution.
      */
     virtual void PredictProbability(/*const Collection *X,*/
                               std::vector<std::vector<double> > &distribution) = 0;
