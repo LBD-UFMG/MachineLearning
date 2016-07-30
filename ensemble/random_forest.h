@@ -44,7 +44,6 @@ class RandomForest {
    * \param Instance labels
    */
   virtual void Predict(/* Collection col, */
-
                        std::vector<int> *instance_label) = 0;
 
   /**
