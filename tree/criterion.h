@@ -12,22 +12,22 @@ namespace tree {
  * for classification problens and MSE for regression
  * problems.
  */
-class Criterion{
-protected:
+class Criterion {
+ public:
   /**
    * \brief Standard destructor.
    */
   virtual ~Criterion();
 
   /**
-   * \brief Compute the impurity measure for the given node.
+   * \brief Computes the impurity measure for the given node.
    * \param node contains the representation of points that will be used to
    * compute the impurity.
    * \return the impurity of the data in the given node.
    */
-  virtual double Impurity(const Node & node) const = 0;
+  virtual double Impurity(const Node& node) const = 0;
 };
 
-} // namespace tree
+}  // namespace tree
 
 #endif
