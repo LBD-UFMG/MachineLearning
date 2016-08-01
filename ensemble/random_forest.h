@@ -2,61 +2,55 @@
 #define _MACHINELEARNING_ENSEMBLE_RANDOM_FOREST_H_
 
 #include "tree/tree.h"
+#include "base/learner.h"
 
 namespace ensemble {
 /**
  * Base class for Random Forest Classification and Regression algorithms.
  */
-class RandomForest {
- public:
-  /**
-   * \brief Standard destructor.
-   */
-  virtual ~RandomForest();
+class RandomForest : public base::Learner{
+  
+  public:
+    
+    /**
+     * Standard Constructor.
+     * \param tree_count Number of trees.
+     * \param thread_count Number of threads.
+     */
+    RandomForest(int tree_count, int thread_count);
 
-  /**
-   * Compute the out-of-bag score that represents the prediction
-   * for the entire set of samples in the oob.
-   * \return oob score
-   */
-  virtual double OobScore() = 0;
+    /**
+     * \brief Standard destructor.
+     */
+    ~RandomForest();
 
-  /**
-   * Compute the out-of-bag score that represents the prediction 
-   * for each sample in the oob.
-   * \param tree_idx Index of the tree
-   * \return oob score
-   */
-  virtual double OobScoreSample(const int tree_idx) = 0;
+    /**
+     * Train the learner with a given dataset.
+     * \param X A pointer object of Collection.
+     */  
+    void Train(/*const Collection *X*/);
+
+    /**
+     * Compute the out-of-bag score that represents the prediction
+     * for the entire set of samples in the oob.
+     * \return oob score
+     */
+  // double OobScore();
+
+    /**
+     * Compute the out-of-bag score that represents the prediction 
+     * for each sample in the oob.
+     * \param document_score Score of each out-of-bag sample
+     */
+   // void OobScoreSample(std::map<int, double> *sample_score); 
+
+  protected:
+    std::vector<std::unique_ptr<Tree> > trees_;
+    int threads_;
 
 
-  /*
-   * Builds the RandomForest.
-   * \param thread Number of threads for paralel execution
-   * \param tree Number of trees in the Forest
-   */
-  virtual void Build(/* Collection col, */ const int thread,
-                     const int tree) = 0;
-
-  /**
-   * Predicts the labels of the instances of X based on a vote by
-   * the trees of the forest, weighted by their probability estimates
-   * \param Instance labels
-   */
-  virtual void Predict(/* Collection col, */
-
-                       std::vector<int> *instance_label) = 0;
-
-  /**
-   * Returns the predicted probability distribution of each instance in X over
-   * all possible classes. They are the mean predicted class
-   * probabilities of the trees in the forest
-   * \param Instance probability distribution
-   */
-  virtual void PredictProbability(/* Collection col, */
-                                  std::vector<std::vector<double> >
-                                      *instance_probability) = 0;
 };
+
 
 } //namespace ensemble
 #endif
