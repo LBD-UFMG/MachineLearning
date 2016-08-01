@@ -2,13 +2,13 @@
 #define _MACHINELEARNING_ENSEMBLE_RANDOM_FOREST_H_
 
 #include "tree/tree.h"
-#include "base/learner.h"
+// #include "base/learner.h"
 
 namespace ensemble {
 /**
  * Base class for Random Forest Classification and Regression algorithms.
  */
-class RandomForest : public base::Learner{
+class RandomForest /*: public base::Learner */{
   
   public:
     
