@@ -48,7 +48,6 @@ class RandomForest : public base::Learner{
     std::vector<std::unique_ptr<Tree> > trees_;
     int threads_;
 
-
 };
 
 
