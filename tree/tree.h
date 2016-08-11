@@ -17,8 +17,8 @@ class Tree{
 
     /**
      * Tree class constructor.
-     * \param splitter      Splitter object.
-     * \param criterion     Criterion object.
+     * \param splitter      Splitter object (It doesn't ownership).
+     * \param criterion     Criterion object (It doesn't ownership).
      * \param max_features    The maximum number of features used to create the tree.
      * \param max_depth     The maximum depth of the tree.
      * \param max_leaf_nodes  The maximum number of leaf nodes of the tree.
