@@ -25,12 +25,18 @@ class Point {
    * \brief Standard destructor.
    */
   virtual ~Point();
-  /** General accessor method for the underlying data.
+
+  /** General accessor method for each feature of the underlying data.
    * \param feature_id The coordinate of interest. Indexing is implementation
    * specific.
    * \return The value of the coordinate specified in the input.
    */
   virtual double GetFeatureValue(unsigned feature_id) const = 0;
+
+  /** General accessor method for the label of the underlying data.
+   * \return The label of the object.
+   */
+  virtual double GetLabel() const = 0;
 
   /**
    * \brief Builds a `std::string` representation of the object.
