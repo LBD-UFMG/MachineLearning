@@ -25,24 +25,10 @@ class RandomForest /*: public base::Learner */{
     ~RandomForest();
 
     /**
-     * Train the learner with a given dataset.
+     * Trains the learner with a given dataset.
      * \param X A pointer object of Collection.
      */  
     void Train(/*const Collection *X*/);
-
-    /**
-     * Compute the out-of-bag score that represents the prediction
-     * for the entire set of samples in the oob.
-     * \return oob score
-     */
-  // double OobScore();
-
-    /**
-     * Compute the out-of-bag score that represents the prediction 
-     * for each sample in the oob.
-     * \param document_score Score of each out-of-bag sample
-     */
-   // void OobScoreSample(std::map<int, double> *sample_score); 
 
   protected:
     std::vector<std::unique_ptr<Tree> > trees_;
