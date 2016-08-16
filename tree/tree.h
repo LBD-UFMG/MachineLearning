@@ -34,12 +34,12 @@ class Tree{
      * \param criterion         Criterion object (It doesn't have ownership).
      * \param max_features      The maximum number of features used to create the tree.
      * \param max_depth         The maximum depth of the tree.
-     * \param max_leaf          The maximum number of leaf nodes of the tree.
+     * \param max_leafs         The maximum number of leaf nodes of the tree.
      * \param min_samples_leaf  The minimum number of samples per leaf.
      * \param min_samples_split The minimum number of samples per node in order to be splitted in two.
      */
     Tree(Splitter *splitter, /*Criterion *criterion,*/ float max_features,
-       int max_depth, int max_leaf, int min_samples_leaf, int min_samples_split);
+       int max_depth, int max_leafs, int min_samples_leaf, int min_samples_split);
 
     /**
      * \brief Standard destructor.
