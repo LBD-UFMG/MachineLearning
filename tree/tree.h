@@ -9,7 +9,20 @@
 namespace tree {
 
 /**
- * Base class for all Decision Tree implementations.
+ * Decision Tree implementation. It will not be used directly.
+ * This class will be extended by Classifiers and Regressors.
+ * \code
+ *    // creates train and test collections, splitter and criterion pointers...
+ *
+ *    // default value for the number of features drawn randomly.
+ *    float sqrt = sqrt(Dtrain->GetNumberOfFetures())/Dtrain->GetNumberOfFetures(); 
+ *    Tree tree(splitter, criterion, sqrt, 0, 0, 2, 2);
+ *    tree->build(Dtrain);
+ *    std::vector<Node *> leafs = new std::vector<Node *>(); 
+ *    tree->tranverse(Dtest, leafs);
+ *
+ *    // free pointers...
+ * \endcode
  */
 class Tree{
 
@@ -17,16 +30,16 @@ class Tree{
 
     /**
      * Tree class constructor.
-     * \param splitter      Splitter object (It doesn't ownership).
-     * \param criterion     Criterion object (It doesn't ownership).
-     * \param max_features    The maximum number of features used to create the tree.
-     * \param max_depth     The maximum depth of the tree.
-     * \param max_leaf_nodes  The maximum number of leaf nodes of the tree.
+     * \param splitter          Splitter object (It doesn't have ownership).
+     * \param criterion         Criterion object (It doesn't have ownership).
+     * \param max_features      The maximum number of features used to create the tree.
+     * \param max_depth         The maximum depth of the tree.
+     * \param max_leaf          The maximum number of leaf nodes of the tree.
      * \param min_samples_leaf  The minimum number of samples per leaf.
      * \param min_samples_split The minimum number of samples per node in order to be splitted in two.
      */
     Tree(Splitter *splitter, /*Criterion *criterion,*/ float max_features,
-       int max_depth, int max_leaf_nodes, int min_samples_leaf, int min_samples_split);
+       int max_depth, int max_leaf, int min_samples_leaf, int min_samples_split);
 
     /**
      * \brief Standard destructor.
