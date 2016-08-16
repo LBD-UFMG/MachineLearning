@@ -65,15 +65,14 @@ class Tree{
 
   protected:
 
-    Splitter *splitter; 
-    /*Criterion *criterion;*/
-    /*Sampler *sampler;*/ 
-    float max_features;
-    int max_depth;
-    int max_leaf_nodes;
-    int min_samples_leaf;
-    int min_samples_split;
-    /*Node* root;*/
+    Splitter *splitter_; 
+    /*Criterion *criterion_;*/
+    float max_features_;
+    int max_depth_;
+    int max_leaf_nodes_;
+    int min_samples_lea_f;
+    int min_samples_split_;
+    /*Node* root_;*/
 
 };
 
