@@ -17,9 +17,9 @@ namespace tree {
  *    // default value for the number of features drawn randomly.
  *    float sqrt = sqrt(Dtrain->GetNumberOfFetures())/Dtrain->GetNumberOfFetures(); 
  *    Tree tree(splitter, criterion, sqrt, 0, 0, 2, 2);
- *    tree->build(Dtrain);
+ *    tree->Build(Dtrain);
  *    std::vector<Node *> leafs = new std::vector<Node *>(); 
- *    tree->tranverse(Dtest, leafs);
+ *    tree->Traverse(Dtest, leafs);
  *
  *    // free pointers...
  * \endcode
