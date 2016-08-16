@@ -28,7 +28,7 @@ class Learner{
      * \param X           A pointer object of Collection.
      * \param prediction  Instances prediction.
      */
-    virtual void Predict(/*const Collection *X,*/ std::vector<double> *prediction) = 0;
+    virtual void Predict(/*const Collection *X,*/ std::vector<double> *prediction) const = 0;
 
      /**
      * Predicts the labels of a point based on the fitted model.
@@ -44,7 +44,7 @@ class Learner{
      *  \param distribution Instances probability distribution.
      */
     virtual void PredictProbability(/*const Collection *X,*/
-                              std::vector<std::vector<double> > *distribution) = 0;
+                              std::vector<std::vector<double> > *distribution) const = 0;
 
     /**
      *  Returns the predicted probability distribution of an point
@@ -53,7 +53,7 @@ class Learner{
      *  \param distribution   Point probability distribution.
      */
     virtual void PredictProbability(/*const Point *point,*/
-                                  std::vector<double> *distribution) = 0;
+                                  std::vector<double> *distribution) const = 0;
 };
 
 } // namespace base
