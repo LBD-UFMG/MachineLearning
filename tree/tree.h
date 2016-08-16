@@ -69,8 +69,8 @@ class Tree{
     /*Criterion *criterion_;*/
     float max_features_;
     int max_depth_;
-    int max_leaf_nodes_;
-    int min_samples_lea_f;
+    int max_leaf_;
+    int min_samples_leaf_;
     int min_samples_split_;
     /*Node* root_;*/
 
