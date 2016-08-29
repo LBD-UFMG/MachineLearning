@@ -47,7 +47,6 @@ class Point {
    */
   virtual std::string ToString() const = 0;
 
- protected:
   /** Parses the content of the received `std::string` into an internal
    * representation, which is implementation specific.
    * \brief Parses the `Point` encoded in the received `std::string`.
