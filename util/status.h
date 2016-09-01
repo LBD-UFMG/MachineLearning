@@ -35,7 +35,7 @@ enum class Code {
  *  \param code the error code that needs to be translated.
  *  \return The translated name of the error code.
  */
-std::string ErrorName(const Code& code);
+const std::string ErrorName(const Code& code);
 
 }  // namespace error
 
@@ -88,7 +88,7 @@ class Status {
   /** Builds a string representation of the object.
    * \return The string representating the calling object.
    */
-  const std::string ToString() const;
+  std::string ToString() const;
 
  protected:
   /** The error code contained by the object. */
