@@ -31,7 +31,7 @@ Status::Status(const Status& status)
     : Status(status.error_code(), status.error_message()) {
 }
 
-std::string Status::ToString() const {
+const std::string Status::ToString() const {
   std::stringstream str_stream;
   str_stream << error::ErrorName(error_code_) << ", " << error_message_;
   return str_stream.str();

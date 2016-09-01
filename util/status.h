@@ -45,7 +45,7 @@ std::string ErrorName(const Code& code);
  * This class is a wrapper around the previous `error::Code` enum. By providing
  * default objects for common scenarios and the possibility of including error
  * messages, this should be the go to class to use wherever executions can fail
- * by any possible means.
+ * by any possible means. Example:
  * \code
  * Status IsSmallerThan5(int n) {
  *  if(n < 5) {
@@ -53,7 +53,7 @@ std::string ErrorName(const Code& code);
  *  }
  *  std::stringstream error_string;
  *  error_string << n << " is greater than or equal to 5";
- *  return Status(error:Code::INVALID_ARGUMENT, error_string.str());
+ *  return Status(error::Code::INVALID_ARGUMENT, error_string.str());
  * }
  * \endcode
  */
@@ -88,7 +88,7 @@ class Status {
   /** Builds a string representation of the object.
    * \return The string representating the calling object.
    */
-  std::string ToString() const;
+  const std::string ToString() const;
 
  protected:
   /** The error code contained by the object. */
