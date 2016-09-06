@@ -38,11 +38,22 @@ class Point {
    */
   virtual double GetLabel() const = 0;
 
-  /**
+  /** Builds a parsable `std::string` object that represents the underlying
+   * object. Objects produced with this method must be usable to reconstruct the
+   * `Point` that produced it.
    * \brief Builds a `std::string` representation of the object.
    * \return A `std::string` representation of the object.
+   * \see Point::Initialize(const std::string& source)
    */
   virtual std::string ToString() const = 0;
+
+  /** Parses the content of the received `std::string` into an internal
+   * representation, which is implementation specific.
+   * \brief Parses the `Point` encoded in the received `std::string`.
+   * \param source The string representation of the object to be parsed.
+   * \see Point::ToString()
+   */
+  virtual void Initialize(const std::string& source) = 0;
 };
 
 }  // namespace base
