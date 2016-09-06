@@ -32,7 +32,7 @@ class L2RPoint : public ::base::Point {
    */
   ~L2RPoint();
 
-  /** Returns the feature indexed by the received parameter. Indexing is 1
+  /** Returns the feature value indexed by the received parameter. Indexing is 1
    * based, as is standard in Learning to Rank applications.
    * \brief Returns the value of the desired coordinate. Indexing is 1 based.
    * \param feature_id The coordinate of interest.
