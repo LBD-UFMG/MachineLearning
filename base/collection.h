@@ -72,7 +72,6 @@ class Collection {
    * \return Number of features.
    */
   virtual unsigned int GetFeaturesNumber() const = 0;
-
 };
 
 }  // namespace base
